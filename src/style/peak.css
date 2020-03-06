@@ -1,0 +1,9 @@
+path{
+    fill: none;
+    stroke: darkgray;
+    stroke-width: 1;
+}
+.domain ,.tick line{
+    stroke:gray;
+    stroke-width: 1;
+}

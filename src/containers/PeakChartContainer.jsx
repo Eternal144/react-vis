@@ -1,13 +1,17 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import PeakChart from '../components/PeakChart'
 import '../style/peak.css'
 
-// filter后的data，峰值
-const PeakChartContainer = ({ events, visible }) =>{
-    return(
-        <div id="peak-chart">
-            峰值图
-        </div>
-    )
-} 
+// 在这里获取过滤后的数据。
+const PeakChartContainer = ( { events, visible } ) =>(
+    <PeakChart 
+        events={events}
+        visible={visible}
+    />
+)
 
-export default PeakChartContainer
+const mapStateToProps = state =>({
+    events: state.events
+})
+export default connect(mapStateToProps)(PeakChartContainer)

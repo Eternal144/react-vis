@@ -1,10 +1,11 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 const ToggleButton = ({ onToggle })=>{
     return (
-        <button onClick={onToggle}>
+        <Button onClick={onToggle} type="primary" >
             toggle
-        </button>
+        </Button>
     )
 }
 export default ToggleButton;

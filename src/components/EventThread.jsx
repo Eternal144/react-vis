@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import * as d3 from 'd3'
 import '../style/event.css'
-const { min, max,floor } = Math;
+import { getMaxHot } from '../function/function'
+
 const height = 9000,
       width = 800,
       rectH =28,
@@ -9,6 +10,7 @@ const height = 9000,
 
 const _2020day = [31,31,29,31,30]
 const margin = {top:20, left:30, bottom:20, right:50}
+const { floor } = Math
 
 class EventThread extends Component{
     constructor(props){
@@ -23,18 +25,18 @@ class EventThread extends Component{
         return parseInt(d.replace('-',''));
     }
     
-    getMaxHot = (data)=>{
-        let maxh = 0,
-            minh = 99,
-            cd = 0;
-        data.forEach((x)=>{
-            maxh = max(d3.max(x.hot),maxh)
-            minh = min(d3.min(x.hot),minh)
-            cd = max(x.hot.length+parseInt(x.diff),cd)
-        })
-        // console.log(cd)
-        return { maxh, minh, cd};
-    }
+    // getMaxHot = (data)=>{
+    //     let maxh = 0,
+    //         minh = 99,
+    //         cd = 0;
+    //     data.forEach((x)=>{
+    //         maxh = max(d3.max(x.hot),maxh)
+    //         minh = min(d3.min(x.hot),minh)
+    //         cd = max(x.hot.length+parseInt(x.diff),cd)
+    //     })
+    //     // console.log(cd)
+    //     return { maxh, minh, cd};
+    // }
     
     getFormatDate = (i,ds)=>{
         // 获取初始月份
@@ -86,7 +88,7 @@ class EventThread extends Component{
     }
     
     drawChart = (data)=>{
-        const { maxh, minh, cd } = this.getMaxHot(data)
+        const { maxh, minh, cd } = getMaxHot(data)
         // 差的起始天数
         const dd = parseInt(data[data.length-1].diff)
         // 所有事件最长的天数
@@ -220,7 +222,7 @@ class EventThread extends Component{
         
         // 画了图但是设置可见性
         if(svg){
-            console.log(visible)
+            // console.log(visible)
             if(visible){
                 svg.style("display","block")
             }else{
@@ -236,11 +238,3 @@ class EventThread extends Component{
     }
 }
 export default EventThread
-// const EventThread = ({ events })=>{
-//     if(events.length > 0){
-//         drawChart(events)
-//     }
-//     return (
-//     <div className="container" id="thread-event"></div>
-//     )
-// }

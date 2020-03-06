@@ -9,7 +9,9 @@ const App = ({ chartFlag })=>(
   <div id="app-container" className="border">
     <Row>
       <Col sm={8} className="border">
-        <EventThreadContainer visible={chartFlag}/>
+        {/* <EventThreadContainer visible={chartFlag}/> */}
+        <EventThreadContainer visible={false}/>
+        <PeakChartContainer visible={true}/>
       </Col>
       <Col sm={4} className="border">
         <Row className="border">
