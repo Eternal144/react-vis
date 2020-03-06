@@ -4,11 +4,11 @@ html, body {
 }
 #thread-event{
     /* height: 2000px; */
-    width: 70%;
 }
-.container{
-    border:2px solid #B3B2B2;
-}
+/* .container{
+    
+    margin: 0;
+} */
 .tick>line{
     /* fill: none; */
     /* stroke: black; */
@@ -32,8 +32,8 @@ html, body {
     /* line-height: 28px; */
     text-anchor: right;
 }
-
+/* 
 #tools{
     height: 200px;
     width: 30%;
-}
+} */

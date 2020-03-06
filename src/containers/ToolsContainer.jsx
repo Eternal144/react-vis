@@ -6,10 +6,13 @@ import { connect } from 'react-redux'
 const ToolsContainer = ({ chartFlag,toggleChart })=>{
     // console.log(chartFlag)
     return(
-        <div className="container" id="tools">
+        <div className="chart_cont" id="tools">
             <ToggleButton 
                 onToggle = {()=>toggleChart()}
             />
+            {/* <FilterSlide
+
+            > */}
         </div>
     )
 }

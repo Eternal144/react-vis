@@ -10,7 +10,7 @@ const EventThreadContainer = ({ events, visible })=>(
     />
 )
 
-//渲染需要的数据
+//渲染需要的数据，最大热度过滤，返回过滤后数据，100%进度条分布。比例尺
 const mapStateToProps = state =>({
     events: state.events
 })

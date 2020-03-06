@@ -224,19 +224,19 @@ class EventThread extends Component{
             if(visible){
                 svg.style("display","block")
             }else{
+                d3.select("thread-event")
                 svg.style("display","none")
             }
         }
     }
     render(){
         return(
-            <div className="container" id="thread-event"></div>
+            <div id="thread-event"></div>
         )
     }
 }
 export default EventThread
 // const EventThread = ({ events })=>{
-
 //     if(events.length > 0){
 //         drawChart(events)
 //     }
