@@ -1,0 +1,2 @@
+export const RECEIVE_EVENT = "RECEIVE_EVENT"
+export const TOGGLE_CHART = "TOGGLE_CHART"
